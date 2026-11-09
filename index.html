@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Digital Media Network — Investment Opportunity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #090d16;
+            --card-bg: rgba(18, 24, 38, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.35);
+            --emerald: #10b981;
+            --emerald-glow: rgba(16, 185, 129, 0.25);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --text-dim: #6b7280;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            border-bottom: 1px solid var(--card-border);
+            margin-bottom: 3rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #818cf8;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.4rem 0.8rem;
+            border-radius: 9999px;
+            margin-bottom: 1.25rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #9ca3af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            backdrop-filter: blur(12px);
+            text-align: center;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-value.request { color: #f43f5e; }
+        .stat-value.return { color: var(--emerald); }
+        .stat-value.timeline { color: #38bdf8; }
+
+        section {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(12px);
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #ffffff;
+        }
+
+        h2 .num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.1);
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 0.975rem;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        .workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .step-desc {
+            font-size: 0.825rem;
+            color: var(--text-dim);
+            line-height: 1.4;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        th {
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            color: var(--text-main);
+        }
+
+        td.amount {
+            font-family: 'JetBrains Mono', monospace;
+            text-align: right;
+            font-weight: 600;
+        }
+
+        th.amount-header {
+            text-align: right;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .total-row td {
+            font-weight: 700;
+            color: var(--emerald);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            font-size: 1rem;
+        }
+
+        .timeline-list {
+            list-style: none;
+            position: relative;
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .timeline-list::before {
+            content: '';
+            position: absolute;
+            left: 0.4rem;
+            top: 0.5rem;
+            bottom: 0.5rem;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0.45rem;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent-glow);
+        }
+
+        .timeline-month {
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .commitment-box {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .commitment-box p {
+            color: #a7f3d0;
+            font-size: 0.9rem;
+        }
+
+        .footer-cta {
+            text-align: center;
+            padding: 2.5rem 1rem 4rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px var(--accent-glow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(99, 102, 241, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <span class="badge">Micro-Investment Proposal</span>
+        <h1>AI Digital Media Business</h1>
+        <p class="subtitle">An automated content creation ecosystem built to scale across global entertainment niches, launching with Grand Theft Auto VI.</p>
+    </header>
+
+    <div class="highlight-grid">
+        <div class="stat-card">
+            <div class="stat-label">Initial Request</div>
+            <div class="stat-value request">€150</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Proposed Return</div>
+            <div class="stat-value return">€300</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Repayment Window</div>
+            <div class="stat-value timeline">6 Months</div>
+        </div>
+    </div>
+
+    <!-- Section 1 -->
+    <section>
+        <h2><span class="num">01</span> What I Want to Build</h2>
+        <p>I am building an automated system of AI agents capable of operating 24/7 to research trending topics, analyze viewer behavior, create original high-quality content, and manage distribution across TikTok, Instagram, and YouTube.</p>
+        <p>The pilot launch will center on the upcoming release of <strong>Grand Theft Auto VI</strong>—capitalizing on massive international audience demand around a major cultural event. Long-term, the core architecture will scale horizontally across technology, automotive, lifestyle, and general entertainment channels without rebuilding from scratch.</p>
+    </section>
+
+    <!-- Section 2 -->
+    <section>
+        <h2><span class="num">02</span> Operating Architecture</h2>
+        <p>The objective is maximum operational leverage: automating repetitive research and production steps to allow multi-account management with minimal manual intervention.</p>
+        
+        <div class="workflow-grid">
+            <div class="step-card">
+                <div class="step-title">1. Research & Analysis</div>
+                <div class="step-desc">Automated tracking of viral topics, video formats, and viewer retention hooks.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-title">2. Content Creation</div>
+                <div class="step-desc">Script generation, AI voice narration, visual synthesis, and dynamic captioning.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-title">3. Quality & Publish</div>
+                <div class="step-desc">Human-in-the-loop content approval, cross-platform scheduling, and analytics monitoring.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section>
+        <h2><span class="num">03</span> Budget Breakdown (€150)</h2>
+        <p>Capital deployment will prioritize lean execution, leveraging open-source tools and low-cost infrastructure.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Expense Allocation</th>
+                    <th class="amount-header">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cloud Server & Initial Hosting</td>
+                    <td class="amount">€25</td>
+                </tr>
+                <tr>
+                    <td>AI API Credits (LLMs & Voice Synthesis)</td>
+                    <td class="amount">€30</td>
+                </tr>
+                <tr>
+                    <td>Domain & Infrastructure</td>
+                    <td class="amount">€10</td>
+                </tr>
+                <tr>
+                    <td>Video Production & Software Costs</td>
+                    <td class="amount">€20</td>
+                </tr>
+                <tr>
+                    <td>Additional Operating Budget</td>
+                    <td class="amount">€25</td>
+                </tr>
+                <tr>
+                    <td>Reserve for Contingencies</td>
+                    <td class="amount">€40</td>
+                </tr>
+                <tr class="total-row">
+                    <td>Total Funding Required</td>
+                    <td class="amount">€150</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Section 4 -->
+    <section>
+        <h2><span class="num">04</span> Execution Roadmap</h2>
+        
+        <ul class="timeline-list">
+            <li class="timeline-item">
+                <div class="timeline-month">Month 1 — Infrastructure & Foundation</div>
+                <div class="timeline-desc">Deploy automation stack, establish the flagship gaming channel, and begin consistent daily publishing workflows.</div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-month">Month 2 — Optimization & Iteration</div>
+                <div class="timeline-desc">Analyze audience retention metrics, double down on high-performing video formats, and refine automated pipelines.</div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-month">Month 3 — Monetization & Multi-Channel Setup</div>
+                <div class="timeline-desc">Activate platform monetization pathways, initiate initial loan repayments, and prepare secondary niche accounts.</div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-month">Months 4 to 6 — Scale & Full Repayment</div>
+                <div class="timeline-desc">Expand into ad revenue, sponsorships, and affiliate channels to complete the 2x return repayment (€300 total).</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Section 5 -->
+    <section>
+        <h2><span class="num">05</span> Repayment Terms & Commitment</h2>
+        <p>While social media ventures carry inherent adoption timelines and risks, I am offering a <strong>100% ROI (€300 total repayment on €150 capital)</strong> within a 6-month timeline.</p>
+        
+        <div class="commitment-box">
+            <p><strong>Transparency Promise:</strong> I will maintain full ledger tracking of all software costs, audience growth metrics, video outputs, and revenue streams, providing clear updates throughout the build and execution phase.</p>
+        </div>
+    </section>
+
+    <div class="footer-cta">
+        <a href="mailto:investor@example.com?subject=Business%20Proposal%20Funding%20-%20AI%20Digital%20Media" class="btn">
+            Back This Project (€150)
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
